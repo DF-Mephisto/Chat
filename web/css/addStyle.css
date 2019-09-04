@@ -1,0 +1,27 @@
+a {
+    font-size: 30px;
+}
+
+a:link {
+    color: green;
+    background-color: cornflowerblue;
+    text-decoration: none;
+}
+
+a:visited {
+    color: pink;
+    background-color: cornflowerblue;
+    text-decoration: none;
+}
+
+a:hover {
+    color: red;
+    background-color: cyan;
+    text-decoration: underline;
+}
+
+a:active {
+    color: yellow;
+    background-color: cornflowerblue;
+    text-decoration: underline;
+}

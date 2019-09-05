@@ -9,9 +9,54 @@
 <html>
 <head>
     <title>Add new user</title>
-    <link rel="stylesheet" href="css/addStyle.css">
+    <link rel="stylesheet" href="../css/addStyles.css">
 </head>
-<body>
-    <a href="/list">To the list page</a>
+<body style="background-color: aquamarine">
+<form method="post">
+    <fieldset class="fieldsetStyle">
+        <legend class="fieldsetLegendStyle">Add User:</legend>
+
+        <div style="padding-left: 100px">
+            <label>Name:
+                <input type="text" name="name" style="position: absolute; right: 100px;"><br />
+            </label>
+            <br />
+            <label>Password:
+                <input type="password" name="pass" style="position: absolute; right: 100px;"><br />
+            </label>
+        </div>
+
+        <br />
+        <%
+            if (request.getAttribute("userName") != null)
+            {
+                out.print("<div style=\"text-align: center; color: green;\">");
+                out.print(request.getAttribute("userName") + " added!");
+                out.print("</div>");
+            }
+            else if (request.getAttribute("error") != null)
+            {
+                String er = (String)request.getAttribute("error");
+                if (!er.equals(""))
+                {
+                    out.print("<div style=\"text-align: center; color: red;\">");
+                    out.println(er);
+                    out.print("</div>");
+                }
+            }
+            else
+            {
+                out.println("<br />");
+            }
+        %>
+        <br />
+
+        <div style="text-align: center;">
+            <input type="submit" value="Submit">
+            <input type="button" value="Back" onclick="location.href='../index.html'" style="margin-left: 50px;">
+        </div>
+    </fieldset>
+</form>
+
 </body>
 </html>

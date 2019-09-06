@@ -9,14 +9,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.List;
 
-public class AddServlet extends HttpServlet
+public class mainServlet extends HttpServlet
 {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        RequestDispatcher requestDispatcher = req.getRequestDispatcher("views/add.jsp");
+        RequestDispatcher requestDispatcher = req.getRequestDispatcher("WEB-INF/index.jsp");
         requestDispatcher.forward(req, resp);
-
     }
 
     @Override
@@ -25,26 +25,18 @@ public class AddServlet extends HttpServlet
         String password = req.getParameter("pass");
         String error = "";
 
-        if (name.equals("") || password.equals(""))
-        {
-            error = "Incorrect user, try again";
-            req.setAttribute("error", error);
-            doGet(req, resp);
-            return;
-        }
-
         Model model = Model.getInstance();
-        if (model.list().contains(name))
+        String pwd = model.getpwd(name);
+        if (pwd == null || !pwd.equals(password))
         {
-            error = "This user already exists";
+            error = "Wrong login or password!";
             req.setAttribute("error", error);
             doGet(req, resp);
             return;
         }
 
-        User user = new User(name, password);
-        model.add(user);
-        req.setAttribute("userName", name);
+        error = "Welcome";
+        req.setAttribute("error", error);
         doGet(req, resp);
     }
 }

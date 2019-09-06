@@ -53,7 +53,7 @@ public class Model {
         }
     }
 
-    synchronized public List<String> list()
+    public List<String> list()
     {
         List<String> list = new ArrayList<>();
 
@@ -71,5 +71,25 @@ public class Model {
         }
 
         return list;
+    }
+
+    public String getpwd(String name)
+    {
+        String pwd = null;
+
+        try(Connection con = DriverManager.getConnection(connectionString))  {
+
+            PreparedStatement stmt = con.prepareStatement("SELECT UserPassword " +
+                                                              "FROM Users " +
+                                                              "WHERE UserName = ?;");
+            stmt.setString(1, name);
+            ResultSet res = stmt.executeQuery();
+            if (res.next()) pwd = res.getString("UserPassword");
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return pwd;
     }
 }

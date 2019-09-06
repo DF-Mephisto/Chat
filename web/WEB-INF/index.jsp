@@ -1,20 +1,20 @@
 <%--
   Created by IntelliJ IDEA.
   User: Mephisto
-  Date: 04.09.2019
-  Time: 12:33
+  Date: 06.09.2019
+  Time: 7:20
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Add new user</title>
-    <link rel="stylesheet" href="../css/addStyles.css">
+    <title>Login screen</title>
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/indexStyles.css"/>
 </head>
 <body style="background-color: aquamarine">
 <form method="post">
     <fieldset class="fieldsetStyle">
-        <legend class="fieldsetLegendStyle">Add User:</legend>
+        <legend class="fieldsetLegendStyle">Main menu</legend>
 
         <div style="padding-left: 100px">
             <label>Name:
@@ -28,13 +28,7 @@
 
         <br />
         <%
-            if (request.getAttribute("userName") != null)
-            {
-                out.print("<div style=\"text-align: center; color: green;\">");
-                out.print(request.getAttribute("userName") + " added!");
-                out.print("</div>");
-            }
-            else if (request.getAttribute("error") != null)
+            if (request.getAttribute("error") != null)
             {
                 String er = (String)request.getAttribute("error");
                 if (!er.equals(""))
@@ -52,8 +46,9 @@
         <br />
 
         <div style="text-align: center;">
-            <input type="submit" value="Register">
-            <input type="button" value="Back" onclick="location.href='/'" style="margin-left: 50px;">
+            <input type="submit" value="Login">
+            <input type="button" value="Register" onclick="location.href='/add'" style="margin-left: 50px;">
+            <input type="button" value="List users" onclick="location.href='/list'" style="margin-left: 50px;">
         </div>
     </fieldset>
 </form>

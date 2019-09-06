@@ -8,6 +8,39 @@
         <welcome-file>index</welcome-file>
     </welcome-file-list>
 
+    <!-- Chat Filter-->
+    <filter>
+        <filter-name>chat</filter-name>
+        <filter-class>app.servlets.filters.AuthFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>chat</filter-name>
+        <url-pattern>/chat</url-pattern>
+    </filter-mapping>
+
+    <!-- Chat Servlet-->
+    <servlet>
+        <servlet-name>chat</servlet-name>
+        <servlet-class>app.servlets.ChatServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>chat</servlet-name>
+        <url-pattern>/chat</url-pattern>
+    </servlet-mapping>
+
+    <!-- Main Filter-->
+    <filter>
+        <filter-name>main</filter-name>
+        <filter-class>app.servlets.filters.MainFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>main</filter-name>
+        <url-pattern>/index</url-pattern>
+    </filter-mapping>
+
     <!-- Main Servlet-->
     <servlet>
         <servlet-name>main</servlet-name>
@@ -40,5 +73,17 @@
         <servlet-name>list</servlet-name>
         <url-pattern>/list</url-pattern>
     </servlet-mapping>
+
+    <!-- Logout Servlet-->
+    <servlet>
+        <servlet-name>logout</servlet-name>
+        <servlet-class>app.servlets.LogoutServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>logout</servlet-name>
+        <url-pattern>/logout</url-pattern>
+    </servlet-mapping>
+
 
 </web-app>

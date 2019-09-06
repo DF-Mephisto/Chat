@@ -12,17 +12,17 @@
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/indexStyles.css"/>
 </head>
 <body style="background-color: aquamarine">
-<form method="post">
+<form method="post" action="/index">
     <fieldset class="fieldsetStyle">
         <legend class="fieldsetLegendStyle">Main menu</legend>
 
         <div style="padding-left: 100px">
             <label>Name:
-                <input type="text" name="name" style="position: absolute; right: 100px;"><br />
+                <input type="text" name="name" required placeholder="login" style="position: absolute; right: 100px;"><br />
             </label>
             <br />
             <label>Password:
-                <input type="password" name="pass" style="position: absolute; right: 100px;"><br />
+                <input type="password" name="pass" required placeholder="password" style="position: absolute; right: 100px;"><br />
             </label>
         </div>
 

@@ -1,10 +1,13 @@
 package app.model;
 
+import app.entities.Msg;
 import app.entities.User;
 
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Model {
     private static Model instance = new Model();
@@ -91,5 +94,48 @@ public class Model {
         }
 
         return pwd;
+    }
+
+    public List<Msg> getMessages()
+    {
+        List<Msg> list = new ArrayList<>();
+
+        try(Connection con = DriverManager.getConnection(connectionString);
+            Statement stmt = con.createStatement())  {
+
+            ResultSet res = stmt.executeQuery("SELECT u.UserName, m.Message " +
+                                                  "FROM Messages AS m " +
+                                                  "INNER JOIN Users AS u ON u.UserNo=m.UserNo;");
+            while (res.next()) {
+                String name = res.getString("UserName");
+                String message = res.getString("Message");
+                list.add(new Msg(name, message));
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return list;
+    }
+
+    synchronized public void addMessage(String name, String message)
+    {
+        try(Connection con = DriverManager.getConnection(connectionString))  {
+            int userno = -1;
+            PreparedStatement stmt = con.prepareStatement("SELECT UserNo FROM Users WHERE UserName=?");
+            stmt.setString(1, name);
+            ResultSet res = stmt.executeQuery();
+            if (res.next()) userno = res.getInt("UserNo");
+
+            stmt = con.prepareStatement("INSERT INTO Messages " +
+                                            "VALUES (?, ?);");
+            stmt.setInt(1, userno);
+            stmt.setString(2, message);
+            stmt.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 }

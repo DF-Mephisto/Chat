@@ -1,0 +1,27 @@
+* {
+    box-sizing: border-box;
+}
+
+.fieldsetStyle {
+    border: 3px solid cornflowerblue;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    height: calc((100% / 5) * 2 - 30px);
+}
+
+.chat {
+    width: 100%;
+    height: calc((100% / 5) * 3 - 30px);
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+textarea {
+    resize: none;
+}

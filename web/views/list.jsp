@@ -11,14 +11,14 @@
     <title>Users list</title>
     <link rel="stylesheet" href="../css/listStyles.css">
 </head>
-<body style="background-color: aquamarine">
+<body style="background-image:url('${pageContext.request.contextPath}/Pictures/Planet.jpg'); background-attachment: fixed;">
 
 <div class="center">
     <%
         List<String> names = (List<String>) request.getAttribute("userNames");
 
         if (names != null && !names.isEmpty()) {
-            out.print("<table>");
+            out.print("<table style=\"color: white;\">");
 
             for (String str : names)
             {

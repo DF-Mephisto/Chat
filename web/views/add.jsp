@@ -11,12 +11,12 @@
     <title>Add new user</title>
     <link rel="stylesheet" href="../css/addStyles.css">
 </head>
-<body style="background-color: aquamarine">
+<body style="background-image:url('${pageContext.request.contextPath}/Pictures/Planet.jpg'); background-attachment: fixed;">
 <form method="post">
     <fieldset class="fieldsetStyle">
         <legend class="fieldsetLegendStyle">Add User:</legend>
 
-        <div style="padding-left: 100px">
+        <div style="color: white; padding-left: 100px">
             <label>Name:
                 <input type="text" name="name" style="position: absolute; right: 100px;"><br />
             </label>

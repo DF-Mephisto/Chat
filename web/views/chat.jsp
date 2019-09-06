@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="../css/chatStyles.css">
     <script src="../js/chatScript.js"></script>
 </head>
-<body style="background-color: aquamarine;">
+<body style="background-image:url('${pageContext.request.contextPath}/Pictures/Planet.jpg'); background-attachment: fixed;">
 
 <div class="chat" id="chatID">
     <%

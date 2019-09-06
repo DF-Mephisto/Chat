@@ -11,12 +11,12 @@
     <title>Login screen</title>
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/indexStyles.css"/>
 </head>
-<body style="background-color: aquamarine">
+<body style="background-image:url('${pageContext.request.contextPath}/Pictures/Planet.jpg'); background-attachment: fixed;">
 <form method="post" action="/index">
     <fieldset class="fieldsetStyle">
         <legend class="fieldsetLegendStyle">Main menu</legend>
 
-        <div style="padding-left: 100px">
+        <div style="padding-left: 100px; color: white;">
             <label>Name:
                 <input type="text" name="name" required placeholder="login" style="position: absolute; right: 100px;"><br />
             </label>

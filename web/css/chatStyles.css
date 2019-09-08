@@ -22,6 +22,10 @@
     padding: 10px;
 }
 
+.wordwrap {
+    word-wrap: break-word;
+}
+
 textarea {
     resize: none;
 }

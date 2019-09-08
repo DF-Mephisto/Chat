@@ -16,7 +16,7 @@
 </head>
 <body style="background-image:url('${pageContext.request.contextPath}/Pictures/Planet.jpg'); background-attachment: fixed;">
 
-<div class="chat" id="chatID">
+<div class="chat wordwrap" id="chatID">
     <%
         List<Msg> messages = (List<Msg>)request.getAttribute("messages");
 

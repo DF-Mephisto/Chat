@@ -20,9 +20,23 @@
     border-style: solid;
     border-color: cornflowerblue;
     text-align: center;
+
+    width: auto;
+    margin: 0 auto;
+
     min-width: 199px;
     height: 25px;
     padding-top: 10px;
     margin-bottom: 20px;
     background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(83,168,209,1) 0%, rgba(255,255,255,1) 100%);
+}
+
+.btn{
+
+}
+
+@-moz-document url-prefix() {
+    .btn{
+        padding: 5px;
+    }
 }

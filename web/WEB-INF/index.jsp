@@ -33,9 +33,9 @@
                 String er = (String)request.getAttribute("error");
                 if (!er.equals(""))
                 {
-                    out.print("<div style=\"text-align: center; color: red;\">");
+                    out.println("<div style=\"text-align: center; color: red;\">");
                     out.println(er);
-                    out.print("</div>");
+                    out.println("</div>");
                 }
             }
             else
@@ -46,9 +46,9 @@
         <br />
 
         <div style="text-align: center;">
-            <input type="submit" value="Login">
-            <input type="button" value="Register" onclick="location.href='/add'" style="margin-left: 50px;">
-            <input type="button" value="List users" onclick="location.href='/list'" style="margin-left: 50px;">
+            <input class="btn" type="submit" value="Login">
+            <input class="btn" type="button" value="Register" onclick="location.href='/add'" style="margin-left: 50px;">
+            <input class="btn" type="button" value="List users" onclick="location.href='/list'" style="margin-left: 50px;">
         </div>
     </fieldset>
 </form>

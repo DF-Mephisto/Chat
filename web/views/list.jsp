@@ -33,7 +33,7 @@
 
     <br />
     <div style="text-align: center; overflow: auto">
-        <button onclick="location.href='/'">Back to main</button>
+        <button class="btn" onclick="location.href='/'">Back to main</button>
     </div>
 </div>
 

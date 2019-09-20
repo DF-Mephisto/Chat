@@ -52,8 +52,8 @@
         <br />
 
         <div style="text-align: center;">
-            <input type="submit" value="Register">
-            <input type="button" value="Back" onclick="location.href='/'" style="margin-left: 50px;">
+            <input class="btn" type="submit" value="Register">
+            <input class="btn" type="button" value="Back" onclick="location.href='/'" style="margin-left: 50px;">
         </div>
     </fieldset>
 </form>

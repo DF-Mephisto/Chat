@@ -1,3 +1,8 @@
+/**
+ *Index page filter
+ *
+ */
+
 package app.servlets.filters;
 
 import java.io.*;

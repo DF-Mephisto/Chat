@@ -1,3 +1,8 @@
+/**
+ *Data base logic
+ *
+ */
+
 package app.model;
 
 import app.entities.Msg;
@@ -5,9 +10,7 @@ import app.entities.User;
 
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class Model {
     private static Model instance = new Model();
@@ -50,6 +53,7 @@ public class Model {
             stmt.setString(1, user.getName());
             stmt.setString(2, user.getPassword());
             stmt.executeUpdate();
+            stmt.close();
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -88,6 +92,7 @@ public class Model {
             stmt.setString(1, name);
             ResultSet res = stmt.executeQuery();
             if (res.next()) pwd = res.getString("UserPassword");
+            stmt.close();
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -133,6 +138,7 @@ public class Model {
             stmt.setInt(1, userno);
             stmt.setString(2, message);
             stmt.executeUpdate();
+            stmt.close();
 
         } catch (SQLException e) {
             e.printStackTrace();

@@ -1,6 +1,10 @@
+/**
+ *index url
+ *
+ */
+
 package app.servlets;
 
-import app.entities.User;
 import app.model.Model;
 
 import javax.servlet.RequestDispatcher;
@@ -10,7 +14,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.util.List;
 
 public class mainServlet extends HttpServlet
 {

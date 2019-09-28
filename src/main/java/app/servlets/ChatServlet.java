@@ -1,3 +1,8 @@
+/**
+ *chat url
+ *
+ */
+
 package app.servlets;
 
 import app.entities.Msg;

@@ -1,6 +1,9 @@
-package app.servlets.filters;
+/**
+ *Chat page filter
+ *
+ */
 
-import app.model.Model;
+package app.servlets.filters;
 
 import java.io.*;
 import javax.servlet.*;

@@ -28,15 +28,11 @@ table {
 }
 
 .error {
-    position: absolute;
-    margin: auto;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
     text-align: center;
     color: red;
     font-size: 30px;
+    overflow: auto;
+    padding: 10px;
 }
 
 .box {

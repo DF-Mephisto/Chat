@@ -18,11 +18,23 @@
 
         <div style="padding-left: 100px; color: white;">
             <label>Name:
-                <input type="text" name="name" required placeholder="login" style="position: absolute; right: 100px;"><br />
+                <%
+                    if (request.getAttribute("name") != null)
+                        out.println("<input type=\"text\" name=\"name\" required placeholder=\"login\" value=\"" + request.getAttribute("name") + "\"style=\"position: absolute; right: 100px;\"><br />");
+                    else
+                        out.println("<input type=\"text\" name=\"name\" required placeholder=\"login\" style=\"position: absolute; right: 100px;\"><br />");
+                %>
+                <!--<input type="text" name="name" required placeholder="login" style="position: absolute; right: 100px;"><br />-->
             </label>
             <br />
             <label>Password:
-                <input type="password" name="pass" required placeholder="password" style="position: absolute; right: 100px;"><br />
+                <%
+                    if (request.getAttribute("pwd") != null)
+                        out.println("<input type=\"password\" name=\"pass\" required placeholder=\"password\" value=\"" + request.getAttribute("pwd") + "\"style=\"position: absolute; right: 100px;\"><br />");
+                        else
+                        out.println("<input type=\"password\" name=\"pass\" required placeholder=\"password\" style=\"position: absolute; right: 100px;\"><br />");
+                %>
+                <!--<input type="password" name="pass" required placeholder="password" style="position: absolute; right: 100px;"><br />-->
             </label>
         </div>
 
